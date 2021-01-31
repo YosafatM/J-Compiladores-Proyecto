@@ -15,16 +15,8 @@ import javax.swing.ScrollPaneConstants;
 import Configuracion.Configuracion;
 import Configuracion.Linea;
 import Compilador.Parser;
-/*
-#Martinez Coronel Brayan Yosafat 
-#Ramirez Olvera Guillermo
-#Sanchez Mendez Edmundo Josue
-#Proyecto: LOGOS
-#18/01/2021
-#3CM7
-*/
-public class VentanaPrincipal extends JFrame {
 
+public class VentanaPrincipal extends JFrame {
     JTextArea areaDeCodigo;
     JScrollPane scrollCodigo;
     PanelDeDibujo panelDeDibujo;
@@ -34,12 +26,10 @@ public class VentanaPrincipal extends JFrame {
     Parser parser;
     boolean modoDebug;
     
-    public VentanaPrincipal(){
-        
+    public VentanaPrincipal() {
         super("Logos");
-        
+
         modoDebug = false;
-        
         parser = new Parser();
         parser.insertarInstrucciones();
         

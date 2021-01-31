@@ -1,17 +1,8 @@
 package Compilador;
 
-
 import java.util.ArrayList;
-/*
-#Martinez Coronel Brayan Yosafat 
-#Ramirez Olvera Guillermo
-#Sanchez Mendez Edmundo Josue
-#Proyecto: LOGOS
-#18/01/2021
-#3CM7
-*/
-public class Marco {
 
+public class Marco {
     private ArrayList parametros;
     private int retorno;
     private String nombre;

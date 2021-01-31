@@ -2,16 +2,8 @@ package Compilador;
 
 import java.util.ArrayList;
 import java.util.Vector;
-/*
-#Martinez Coronel Brayan Yosafat 
-#Ramirez Olvera Guillermo
-#Sanchez Mendez Edmundo Josue
-#Proyecto: LOGOS
-#18/01/2021
-#3CM7
-*/
-public class TablaDeSimbolos {
 
+public class TablaDeSimbolos {
     ArrayList<Par> simbolos;
     
     public TablaDeSimbolos(){

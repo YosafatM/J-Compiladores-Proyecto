@@ -1,18 +1,9 @@
-/*
-#Martinez Coronel Brayan Yosafat 
-#Ramirez Olvera Guillermo
-#Sanchez Mendez Edmundo Josue
-#Proyecto: LOGOS
-#18/01/2021
-#3CM7
-*/
 %{
 	import java.lang.Math;
 	import java.io.*;
 	import java.util.StringTokenizer;
 	import Configuracion.Configuracion;
 %}
-
 
 %token IF
 %token ELSE

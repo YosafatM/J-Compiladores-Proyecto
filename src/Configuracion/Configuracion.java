@@ -2,14 +2,7 @@ package Configuracion;
 
 import java.awt.Color;
 import java.util.ArrayList;
-/*
-#Martinez Coronel Brayan Yosafat 
-#Ramirez Olvera Guillermo
-#Sanchez Mendez Edmundo Josue
-#Proyecto: LOGOS
-#18/01/2021
-#3CM7
-*/
+
 public class Configuracion {
 
     ArrayList<Linea> lineas;
@@ -21,20 +14,16 @@ public class Configuracion {
     public Configuracion(){
         x = 0.0;
         y = 0.0;
-        lineas = new ArrayList<Linea>(); 
+        lineas = new ArrayList<>();
     }
     
-    public void agregarLinea(Linea linea){
+    public void agregarLinea(Linea linea) {
         lineas.add(linea);
     }
     
-    public void setPosicion(double x, double y){
+    public void setPosicion(double x, double y) {
         this.x = x;
         this.y = y;
-    }
-    
-    public void limpiar(){
-        lineas.clear();
     }
 
     public ArrayList<Linea> getLineas() {
@@ -66,12 +55,11 @@ public class Configuracion {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         String valor = "";
         for(int i = 0; i < lineas.size(); i++)
             valor += lineas.get(i)+", ";
         valor += "x:"+x+" y:"+y+" angulo: "+angulo;
         return valor;
     }
-    
 }

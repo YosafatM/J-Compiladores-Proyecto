@@ -1,6 +1,5 @@
 package Compilador;
 
-
 import java.awt.Color;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -8,14 +7,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 import Configuracion.Configuracion;
 import Configuracion.Linea;
-/*
-#Martinez Coronel Brayan Yosafat 
-#Ramirez Olvera Guillermo
-#Sanchez Mendez Edmundo Josue
-#Proyecto: LOGOS
-#18/01/2021
-#3CM7
-*/
+
 public class MaquinaDePila {
     
     private int contadorDePrograma;

@@ -1,12 +1,5 @@
 package Compilador;
-/*
-#Martinez Coronel Brayan Yosafat 
-#Ramirez Olvera Guillermo
-#Sanchez Mendez Edmundo Josue
-#Proyecto: LOGOS
-#18/01/2021
-#3CM7
-*/
+
 public class Par {
 
     private String nombre;
