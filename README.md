@@ -5,7 +5,8 @@ bien, también pueden poner un issue o contactarme por las datos de mi perfil.
 
 ## Cómo correrlo:
 El proyecto se corrió desde IntelliJ IDEA, así que sería lo más sencillo de realizar. Sin embargo, con la carpeta src se
-puede hacer en NetBeans un proyecto directamente.
+puede hacer en NetBeans un proyecto directamente. La clase principal que hay que correr está en la carpeta: src/Logos, y
+es el main de todo el proyecto.
 
 ## Instrucciones de uso:
 En el archivo Demo.txt, se cuentan con los ejemplos requeridos en la lista de figuras que se piden para el proyecto. 
