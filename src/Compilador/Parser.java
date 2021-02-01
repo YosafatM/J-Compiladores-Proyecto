@@ -594,20 +594,9 @@ public void insertarInstrucciones(){
 	tablaDeSimbolos.insertar("TURN", new MaquinaDePila.Girar());
 	tablaDeSimbolos.insertar("FORWARD", new MaquinaDePila.Avanzar());
 	tablaDeSimbolos.insertar("COLOR", new MaquinaDePila.CambiarColor());
-        tablaDeSimbolos.insertar("PenUP", new MaquinaDePila.SubirPincel());
-        tablaDeSimbolos.insertar("PenDOWN", new MaquinaDePila.BajarPincel());
-
+	tablaDeSimbolos.insertar("PenUP", new MaquinaDePila.SubirPincel());
+	tablaDeSimbolos.insertar("PenDOWN", new MaquinaDePila.BajarPincel());
 }
-
-
-public Configuracion ejecutarCodigo(String codigo){
-    st = new StringTokenizer(ajustarCadena(codigo));
-    newline=false;
-    yyparse();
-    if(!huboError)
-            maquina.ejecutar();
-    return maquina.getConfiguracion();
-} 
 
 public boolean compilar(String codigo){
     st = new StringTokenizer(ajustarCadena(codigo));
@@ -635,7 +624,7 @@ public Configuracion ejecutar(){
     return maquina.getConfiguracion();
 }
 
-void dotest() throws Exception{
+void dotest() {
 	insertarInstrucciones();
 	BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 	while (true){
@@ -646,7 +635,7 @@ void dotest() throws Exception{
 		catch (Exception e){}
 		st = new StringTokenizer(ins);
 		newline=false;
-		//maquina = new MaquinaDePila(tablaDeSimbolos);
+
 		yyparse();
 		if(!huboError)
 			maquina.ejecutar();

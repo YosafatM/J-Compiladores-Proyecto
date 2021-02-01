@@ -17,12 +17,9 @@ import Configuracion.Linea;
 import Compilador.Parser;
 
 public class VentanaPrincipal extends JFrame {
-    JTextArea areaDeCodigo;
-    JScrollPane scrollCodigo;
-    PanelDeDibujo panelDeDibujo;
-    JButton ejecutar;
-    JButton debug;
-    JButton siguiente;
+    private final JTextArea areaDeCodigo;
+    private final PanelDeDibujo panelDeDibujo;
+    private final JButton ejecutar, siguiente;
     Parser parser;
     boolean modoDebug;
     
@@ -34,7 +31,7 @@ public class VentanaPrincipal extends JFrame {
         parser.insertarInstrucciones();
         
         areaDeCodigo = new JTextArea(20,20);
-        scrollCodigo = new JScrollPane (areaDeCodigo);
+        JScrollPane scrollCodigo = new JScrollPane(areaDeCodigo);
         scrollCodigo.setBounds(10,10,250,550);
         add(scrollCodigo);
         
@@ -45,67 +42,56 @@ public class VentanaPrincipal extends JFrame {
         
         ImageIcon icon1 = new ImageIcon(System.getProperty("user.dir") + "/Play.png");
         Image img1 = icon1.getImage();
-        Image imgaux = img1.getScaledInstance(50, 40, java.awt.Image.SCALE_SMOOTH);
+        Image imgaux = img1.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
         ejecutar = new JButton(new ImageIcon(imgaux));
         ejecutar.setBounds(10,570,50,40);
-        ejecutar.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                parser.limpiar();
-                if(parser.compilar(areaDeCodigo.getText()))
-                    panelDeDibujo.setConfiguracion(parser.ejecutar());
-                else{
-                    parser = new Parser();
-                    parser.insertarInstrucciones();
-                    panelDeDibujo.setConfiguracion(parser.getConfiguracion());
-                }
-                panelDeDibujo.repaint();
+        ejecutar.addActionListener(event -> {
+            parser.limpiar();
+            if(parser.compilar(areaDeCodigo.getText()))
+                panelDeDibujo.setConfiguracion(parser.ejecutar());
+            else {
+                parser = new Parser();
+                parser.insertarInstrucciones();
+                panelDeDibujo.setConfiguracion(parser.getConfiguracion());
             }
+            panelDeDibujo.repaint();
         });
         add(ejecutar);
         
         ImageIcon icon2 = new ImageIcon(System.getProperty("user.dir") + "/Debug.png");
         Image img2 = icon2.getImage();
-        Image imgaux2 = img2.getScaledInstance(50, 40, java.awt.Image.SCALE_SMOOTH);
-        debug = new JButton(new ImageIcon(imgaux2));
+        Image imgaux2 = img2.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
+        JButton debug = new JButton(new ImageIcon(imgaux2));
         debug.setBounds(150,570,50,40); 
-        debug.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                parser.limpiar();
-                if(!modoDebug){
-                    if(parser.compilar(areaDeCodigo.getText())){
-                        panelDeDibujo.setConfiguracion(parser.getConfiguracion());
-                        cambiarDebug();
-                    }
-                    else{
-                        parser = new Parser();
-                        parser.insertarInstrucciones();
-                        panelDeDibujo.setConfiguracion(parser.getConfiguracion());
-                    }
-                }
-                else{
+        debug.addActionListener(event -> {
+            parser.limpiar();
+            if(!modoDebug){
+                if(parser.compilar(areaDeCodigo.getText())){
+                    panelDeDibujo.setConfiguracion(parser.getConfiguracion());
                     cambiarDebug();
                 }
-                panelDeDibujo.repaint();
+                else{
+                    parser = new Parser();
+                    parser.insertarInstrucciones();
+                    panelDeDibujo.setConfiguracion(parser.getConfiguracion());
+                }
             }
+            else{
+                cambiarDebug();
+            }
+            panelDeDibujo.repaint();
         });
         add(debug);
         
         ImageIcon icon3 = new ImageIcon(System.getProperty("user.dir") + "/Next.png");
         Image img3 = icon3.getImage();
-        Image imgaux3 = img3.getScaledInstance(50, 40, java.awt.Image.SCALE_SMOOTH);
+        Image imgaux3 = img3.getScaledInstance(30, 30, java.awt.Image.SCALE_SMOOTH);
         siguiente = new JButton(new ImageIcon(imgaux3));
         siguiente.setBounds(210,570,50,40);
-        siguiente.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                parser.ejecutarSiguiente();
-                panelDeDibujo.setConfiguracion(parser.getConfiguracion());
-                panelDeDibujo.repaint();
-            }
+        siguiente.addActionListener(event -> {
+            parser.ejecutarSiguiente();
+            panelDeDibujo.setConfiguracion(parser.getConfiguracion());
+            panelDeDibujo.repaint();
         });
         siguiente.setEnabled(false);
         add(siguiente); 
