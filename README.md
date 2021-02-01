@@ -1,6 +1,6 @@
 # J-Compiladores-Proyecto
 Proyecto para la materia de compiladores cursada con el profesor Tecla Parra Roberto, opción: Logos con demo incluida.
-Si es requieren ayuda en algo, estaré dispuesto a contestar dudas lo más pronto posible en el correo de mi perfil. O,
+Si requieren ayuda en algo, estaré dispuesto a contestar dudas lo más pronto posible en el correo de mi perfil. O,
 bien, también pueden poner un issue o contactarme por las datos de mi perfil.
 
 ## Cómo correrlo:
