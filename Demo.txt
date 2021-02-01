@@ -1,4 +1,4 @@
-//Ejemplo
+//Ejemplo básico
 PenUP[];
 FORWARD[100];
 TURN[90];
